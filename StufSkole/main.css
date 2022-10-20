@@ -1,5 +1,6 @@
 body{
 background-color:#2e754a;
+margin:0;
 }
 
 h1{
@@ -8,6 +9,13 @@ text-align:center;
 
 h4{
 text-align:center;
+}
+
+#Topbar{
+background-color:white;
+position:fixed;
+width:100%;
+top:0;
 }
 
 img{
