@@ -18,3 +18,8 @@ border:3px solid black;
 border-radius: 10px;
 width:15%;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
