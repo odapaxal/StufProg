@@ -1,15 +1,8 @@
 
 body{
 
-background: hsla(164, 38%, 18%, 1);
+background: hsla(164, 38%, 18%, 1);  background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  background: -moz-linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  background: -webkit-linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#1C3E35", endColorstr="#99F2D1", GradientType=1 );
 
-background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);
-
-background: -moz-linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);
-
-background: -webkit-linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#1C3E35", endColorstr="#99F2D1", GradientType=1 );
 margin:0;
 }
 
@@ -25,14 +18,9 @@ text-align:center;
 p{
 text-align:center;
 margin-top:20vh;
+font-family: 'Trebuchet MS', sans-serif;
 }
 
-#info{
-background-color:white
-position:relative;
-height:1000px;
-
-}
 
 #Topbar{
 background-color:white;
@@ -46,7 +34,6 @@ top: 0;
 #machine{
 display: block;
 margin-top: 10vh;
-margin-bottom: auto;
 margin-left: auto;
 margin-right: auto;
 border:3px solid black;
@@ -54,11 +41,18 @@ border-radius: 10px;
 width: 18%;
 }
 
-#insta{
-width:5%;
-position:absolute;
-display: block;
+
+
+#StufLogo{
+position: absolute;
+height:100%;
 }
+
+#scroll{
+position:relative;
+height:500px;
+}
+
 
 table, th, td {
     border: 1px solid black;
