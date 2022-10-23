@@ -1,56 +1,76 @@
 
 body{
-
-background: hsla(164, 38%, 18%, 1);  background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  background: -moz-linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  background: -webkit-linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#1C3E35", endColorstr="#99F2D1", GradientType=1 );
-
-margin:0;
+margin:0vw;
 }
 
-
-h1{
-text-align:center;
-}
-
-h4{
-text-align:center;
-}
-
-p{
-text-align:center;
-margin-top:20vh;
-font-family: 'Trebuchet MS', sans-serif;
-}
 
 
 #Topbar{
 background-color:white;
-z-index: 2;
+z-index:1;
 position:fixed;
 width:100%;
-height:15%;
-top: 0;
+height:12%;
+top:0vw;
 }
-
-#machine{
-display: block;
-margin-top: 10vh;
-margin-left: auto;
-margin-right: auto;
-border:3px solid black;
-border-radius: 10px;
-width: 18%;
-}
-
-
 
 #StufLogo{
 position: absolute;
 height:100%;
 }
 
+#wholeScreen{
+background-color:background: hsla(164, 38%, 18%, 1);  background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  background: -moz-linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  background: -webkit-linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#1C3E35", endColorstr="#99F2D1", GradientType=1);
+position:absolute;
+width:100%;
+height:300%;
+bottom:-113vw;
+}
+
+#bottom{
+background-color:white;
+position:absolute;
+width:100%;
+height:15%;
+bottom:-120vw;
+}
+
 #scroll{
-position:relative;
-height:500px;
+position:absolute;
+width:1%;
+height:317%;
+}
+
+#machine{
+max-width:18%;
+height:auto;
+border:3px solid black;
+border-radius: 10px;
+margin-left:auto;
+margin-right:auto;
+display:block;
+}
+
+#p1{
+text-align:center;
+margin-top:15vw;
+font-family: 'Trebuchet MS', sans-serif;
+font-size:1,5vw;
+}
+
+#p2{
+text-align:center;
+margin-top:7vw;
+font-family: 'Trebuchet MS', sans-serif;
+font-size:1,5vw;
+}
+
+#Instagram{
+float:right;
+max-width:4%;
+height:auto;
+margin-right:5vw;
+margin-top:2vw;
 }
 
 
