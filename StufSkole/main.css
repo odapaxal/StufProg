@@ -77,7 +77,12 @@ margin-top:2vw;
 }
 
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
+table{
+margin-left:auto;
+margin-right:auto;
+margin-top:10vw;
+border: 3px solid black;
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 80%;
+}
