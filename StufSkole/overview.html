@@ -94,10 +94,10 @@ function MakeTableFromFile(path)
                         }
                         people=entries[j].split('|');
                         src="https://img.pokemondb.net/sprites/black-white/normal/"+pokemons[people[0].charCodeAt(0)%pokemons.length]+".png";
-                            table+="<img class='profile' src='"+src+"'>";
+                            table+="<img class='profile' alt='"+people[0]+"' src='"+src+"'>";
                         for(let k=1; k<people.length; k++){
                             src="https://img.pokemondb.net/sprites/black-white/normal/"+pokemons[people[k].charCodeAt(0)%pokemons.length]+".png";
-                            table+="<img class='profile_small' src='"+src+"'>";
+                            table+="<img class='profile_small' alt='"+people[k]+"' src='"+src+"'>";
                         }
                         table+="</td>";
                         
