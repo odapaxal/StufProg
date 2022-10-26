@@ -24,19 +24,15 @@
 		
 	<p>Eller meld deg på noen andre sin klesvask:</p>
 
-<table>
-  <tr>
-	<th>Date</th>
-	<th>Name</th>
-	<th>Time</th>
-  </tr>
-  <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
-</table>
-	
+	<p id="tableGoesHere"></p>
+
+	<form action="edit.php" method="post">
+	<input type="text" value="0" placeholder="Dag" name="day"></input>
+	<input type="text" value="0" placeholder="Tid" name="time"></input>
+	//Before upload, check if id containts the characters , and | since they will cause havoc later in the code >:(
+	<input type="text" placeholder="Ditt navn" name="id"></input>
+	<button action="submit">Run</button>
+	</form>
 
 </div>
 
@@ -48,4 +44,60 @@
 </div>
 
 </body>
+
+<script>
+let tableValues=[];
+const insertTableToHTML=document.getElementById("tableGoesHere");
+const dayOfWeek=["Man","Tirs","Ons","Tors","Fre","Lør","Søn"];
+const pokemons=["venusaur","bulbasaur","pikachu","charmander","squirtle","eevee","metapod","weedle","pidgey","sandshrew","jigglypuff","diglett","meowth","growlithe","tentacool","hypno","cubone","ditto","snorlax","articuno","mew"];
+
+//Make the table every time the page is loaded.
+document.body.onload+=MakeTableFromFile("test.txt");
+function MakeTableFromFile(path)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", path+"?v="+new Date().getTime(), false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                tableValues=[];
+                var lines=rawFile.responseText.split('\n');
+                let table="<table>";
+                for(let i=0; i<lines.length; i++){
+                    var weekShift=Math.floor(i/7);
+                    var weekDay=i%7;
+                    var dayStr=dayOfWeek[weekDay];
+                    if(weekShift>0)dayStr+="+"+weekShift;
+                    table+="<tr> <th>("+dayStr+")</th>";
+                    entries=lines[i].split(',');
+                    tableValues.push(entries);
+                    for(let j=0; j<entries.length; j++){
+                        table+="<td>";
+                        if(entries[j]==0){
+                            table+="</td>"; continue;
+                        }
+                        people=entries[j].split('|');
+                        src="https://img.pokemondb.net/sprites/black-white/normal/"+pokemons[people[0].charCodeAt(0)%pokemons.length]+".png";
+                            table+="<img class='profile' src='"+src+"'>";
+                        for(let k=1; k<people.length; k++){
+                            src="https://img.pokemondb.net/sprites/black-white/normal/"+pokemons[people[k].charCodeAt(0)%pokemons.length]+".png";
+                            table+="<img class='profile_small' src='"+src+"'>";
+                        }
+                        table+="</td>";
+                        
+                        //src="https://img.pokemondb.net/artwork/avif/"+pokemons[parseInt( entries[j])%pokemons.length]+".avif";
+                    }
+                    table+="</tr>";
+                }
+                insertTableToHTML.innerHTML+=table+"</table>";
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+</script>
 </html>
