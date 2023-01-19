@@ -4,20 +4,20 @@ import MySQLdb.cursors
 import re
 
 app = Flask(__name__)
-app.secret_key="Taylor Swift"
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'odatabase'
+app.config['MYSQL_DB'] = 'Local innstance 3306'
+app.config['MYSQL_SCHEMA'] = 'odatabase'
 
 mysql=MySQL(app)
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/login')
 def login():
     msg=''
-    if request.method== 'POST' and 'username' in request.form and 'user_password' in request.form: #sjekker om brukernavn og passord variablene eksisterer i databasen
+    if request.method == 'POST' and 'username' in request.form and 'user_password' in request.form: #sjekker om brukernavn og passord variablene eksisterer i databasen
         username = request.form['username']
-        password = request.form['user_password']
+        user_password = request.form['user_password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute =('SELECT *FROM accounts WHERE username= %s AND user_password = %s',(username,user_password))
         account = cursor.fetchone()
@@ -27,4 +27,4 @@ def login():
             session['username'] = account['username']
             msg = 'Du er logget inn!'
         else: msg ='Feil brukernavn/passord. Prøv igjen eller lag en ny bruker!'
-    return render_template('innlogging.html',msg=msg)
+    return render_template('/login',msg=msg)
