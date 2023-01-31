@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vaskeliste</title>
+	<link rel="stylesheet" href="../main.css">
+</head>
+<body >
+	<header class="Topbar">
+		<a href="index.html"> <img class="StufLogo" src="../images/stuflogo.jpg" alt="StufLogo"> </a>   
+		<nav>
+		<a href="overview.html">Vaskeliste</a>
+		<a href="innlogging.html">Innlogging</a>
+		<a href="">About</a>
+		</nav>
+	</header>
+
+	<h1>Vask klær? - Skriv her!</h1><br>
+	
+	<div>
+		<p> Velg tid: </p>
+		<input type:"datetime-local"; id:"tid">
+			
+		<p>Eller meld deg på noen andre sin klesvask:</p>
+
+		<p id="tableGoesHere"></p>
+
+		<form action="" method="post">
+		<!-- Make proper input methods, cus these dont are not reliable at all LOL -->
+		<input type="text"  placeholder="Dag" name="day"></input>
+		<input type="text"  placeholder="Tid" name="time"></input>
+		<button action="submit">Run</button>
+		</form><br>
+	</div>
+
+	<div class="bottom"> 
+		<a href="https://www.instagram.com/stufskole/" target="_blank">
+		<img id="Instagram" src="../images/Instagram.jpg" alt"Instagram">
+		</a>
+		<p >Copyright &copy by Stuf Programmering-Group</p>
+	</div>
+
+</body>
+</html>

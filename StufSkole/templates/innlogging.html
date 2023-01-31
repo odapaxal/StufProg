@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+    <header class="Topbar">
+        <a href="index.html"> <img class="StufLogo" src="../images/stuflogo.jpg" alt="StufLogo"> </a>   
+        <nav>
+        <a href="overview.html">Vaskeliste</a>
+        <a href="innlogging.html">Innlogging</a>
+        <a href="">About</a>
+        </nav>
+    </header>
+
+    <div class="login">
+        <div class="links">
+            <a href="innlogging.html" method="post" class="active">Logg inn</a>
+            <a href="register.html"> Registrer ny bruker </a>
+        </div>
+        <form action="{{ url_for(/login) }}"method="post">
+            <input type="text" name="username" id="username" placeholder="Brukernavn" reqired>
+            <input type="text" name="user_password" id="user_password" placeholder="Passord" required>
+            <div class="msg"></div>
+            <input type="submit" value="Logg inn">
+        </form>
+    </div>
+    <p>{{ msg }}</p>
+
+    <div class="bottom"> 
+        <a href="https://www.instagram.com/stufskole/" target="_blank">
+        <img id="Instagram" src="../images/Instagram.jpg" alt="Instagram">
+        </a>
+        <p >Copyright &copy by Stuf Programmering-Group</p>
+    </div>
+    
+</body>
+</html>

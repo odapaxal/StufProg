@@ -1,49 +1,48 @@
-
 body{
 margin:0vw;
+text-align:center;
+font-family: 'Trebuchet MS', sans-serif;
+font-size:1,5vw;
+padding-top: 12%;
 }
+.Topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
 
-.Topbar .StufLogo{
-    float:left;
-    width:100px;
-    margin: 0px -20px;
-}
-.Topbar .link {
-    float: left;
-    color: #40bfbe;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-.Topbar a:hover {
-    background-color: #dee0e4;
-    color: black;
-  }
-  
-.Topbar a.active {
-    background-color: #dee0e4;
-    color: rgb(8, 46, 25);
-  }
-.Topbar{
 background-color:#40bfbe;
-z-index:1;
 position:fixed;
 width:100%;
 height:12%;
 top:0vw;
 }
 
+.Topbar .StufLogo{
+    position:absolute;
+    top:0;
+    float:left;
+    height:100%;
+    width:auto;
+}
+.Topbar nav a {
+    color:black;
+    margin: 0 1vw 0 1vw;
+    padding:2vw;
+    text-decoration: none;
+    font-size: 17px;
+  }
+.Topbar nav a:hover {
+    background-color: #dee0e4;
+  }
+  
+.Topbar nav a.active {
+    background-color: #dee0e4;
+  }
 .Topbar img.profile_small{
     width:50px;
     margin:10px -20px;
     z-index:2;
 }
-.Topbar img.profile{
-    width:100px;
-    margin: 0px -20px;
-}
-
 .bottom{
 background-color:#40bfbe;
 position:fixed;
@@ -51,37 +50,24 @@ width:100%;
 height:15%;
 bottom:0;
 overflow: hidden;
-}
-
-#scroll{
-background-color:red;
-position:absolute;
-width:1%;
-height:317%;
-}
-
-#machine{
-max-width:18%;
-height:auto;
-border:3px solid black;
-border-radius: 10px;
-margin-left:auto;
-margin-right:auto;
-display:block;
-}
-
-#p1{
-text-align:center;
-margin-top:15vw;
-font-family: 'Trebuchet MS', sans-serif;
-font-size:1,5vw;
-}
-
-#p2{
 text-align:center;
 margin-top:7vw;
 font-family: 'Trebuchet MS', sans-serif;
 font-size:1,5vw;
+}
+.bottom p{
+    padding:1vw;
+}
+.machine{
+width:18%;
+min-width:50px;
+border-radius: 10px;
+padding:3vw;
+text-align: center;
+
+}
+.machine:hover{
+    filter:drop-shadow(0 0 2em #40bfbe);
 }
 
 #Instagram{
@@ -92,22 +78,12 @@ margin-right:5vw;
 margin-top:2vw;
 }
 
-
-table{
-margin-left:auto;
-margin-right:auto;
-margin-top:10vw;
-border: 3px solid black;
-font-family: arial, sans-serif;
-border-collapse: collapse;
-width: 80%;
-}
-
 .login, .register {
     width:400px;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px  auto;
-    margin-top: 20% auto;
+    margin: auto;
+    margin-top: 0;
+    align-items: center;
     box-sizing:border-box;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -moz-osx-font-smoothing: grayscale;
