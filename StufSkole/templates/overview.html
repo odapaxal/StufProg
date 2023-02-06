@@ -5,39 +5,45 @@
 	<title>Vaskeliste</title>
 	<link rel="stylesheet" href="../main.css">
 </head>
-<body >
 	<header class="Topbar">
-		<a href="index.html"> <img class="StufLogo" src="../images/stuflogo.jpg" alt="StufLogo"> </a>   
+		<a href="index.html"> 
+			<img class="StufLogo" src="../images/stuflogo.jpg" alt="StufLogo"> 
+		</a>   
 		<nav>
-		<a href="overview.html">Vaskeliste</a>
-		<a href="innlogging.html">Innlogging</a>
-		<a href="">About</a>
+			<a href="overview.html">Vaskeliste</a>
+			<a href="">Spill hangman</a>
+			<a href="">Om oss</a>
+			<a href="innlogging.html">Logg inn</a>
 		</nav>
+			<input type="checkbox" id="checkboxToggle">
+			<label for="checkboxToggle" class="menyIkon"><img src="../images/meny_ikon.png"></label>
+		<div class="sidebar">
+			<input type="checkbox" id="checkboxToggle">
+			<label for="checkboxToggle" class="exit">&#x2715</label>
+			<a href="overview.html">Vaskeliste</a>
+			<a href="">Spill hangman</a>
+			<a href="">Om oss</a>
+			<a href="innlogging.html">Logg inn</a>
+		</div>
 	</header>
-
-	<h1>Vask klær? - Skriv her!</h1><br>
-	
+<body>
+	<h1>Vask klær? - Skriv her! &#x2715 </h1><br>
+	<img class="menyIkon" src="../images/meny_ikon.png">
 	<div>
-		<p> Velg tid: </p>
-		<input type:"datetime-local"; id:"tid">
-			
-		<p>Eller meld deg på noen andre sin klesvask:</p>
-
-		<p id="tableGoesHere"></p>
-
-		<form action="" method="post">
-		<!-- Make proper input methods, cus these dont are not reliable at all LOL -->
-		<input type="text"  placeholder="Dag" name="day"></input>
-		<input type="text"  placeholder="Tid" name="time"></input>
-		<button action="submit">Run</button>
-		</form><br>
+		
 	</div>
 
 	<div class="bottom"> 
 		<a href="https://www.instagram.com/stufskole/" target="_blank">
-		<img id="Instagram" src="../images/Instagram.jpg" alt"Instagram">
+		<img id="Instagram" src="../images/Instagram.jpg" alt="Instagram">
 		</a>
-		<p >Copyright &copy by Stuf Programmering-Group</p>
+		<adress>
+			Copyright &copy by Stuf Programmering<br>
+			<a href="">Nettsidens url</a><br>
+			<a href="mailto:post@stufskole.no">post@stufskole.no</a><br>
+			<a href="tel:+4793086277">930 86 277</a>
+		</adress>
+		
 	</div>
 
 </body>

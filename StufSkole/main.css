@@ -1,82 +1,148 @@
+@import "bourbon";
+
 body{
 margin:0vw;
 text-align:center;
 font-family: 'Trebuchet MS', sans-serif;
-font-size:1,5vw;
-padding-top: 12%;
+padding-top: 75px;
 }
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+    margin: 0 1vw 0 1vw;
+    padding:2vw;
+}
+a:hover {
+    color: #dee0e4;
+    transition: 0.3s;
+  }
+
+/* Sidebar */
+
+.sidebar {
+    background-color: #40bfbe;
+    height:100%;
+    width:100%;
+    position:fixed;
+    top:0;
+    right:0;
+    padding-top: 5vw;
+    display: none;
+    transition: translateX(35%);
+    filter:drop-shadow(0 0 2em #2f2f2f);
+}
+.sidebar a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding:35px;
+}
+
+/* Topbar */
+
 .Topbar {
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-background-color:#40bfbe;
-position:fixed;
-width:100%;
-height:12%;
-top:0vw;
+    background-color:#40bfbe;
+    position:fixed;
+    width:100%;
+    height:70px;
+    top:0vw;
+}
+.Topbar nav a.active {
+    background-color: #dee0e4;
+  }
+input[type=checkbox]{
+    display: none;
+}
+.menyIkon{
+    display:none;
+    position:absolute;
+    user-select: none;
+}
+.menyIkon img {
+    height:38px;
+    padding:15px;
+}
+.exit{
+    position:fixed;
+    top:0;
+    right:0;
+    padding:40px;
+    font-size: 35px;
 }
 
-.Topbar .StufLogo{
+@media screen and (max-width:768px) {
+    .Topbar nav {
+        display:none;
+    }
+    input[type=checkbox]:checked ~ .sidebar{
+        display: block;
+        transition:2s;
+    }
+    input[type=checkbox]:checked ~ .bottom{
+        display: none;
+        transition:2s;
+    }
+    .menyIkon{
+        display:contents;
+    }
+}
+
+.StufLogo{
     position:absolute;
     top:0;
     float:left;
     height:100%;
     width:auto;
 }
-.Topbar nav a {
-    color:black;
-    margin: 0 1vw 0 1vw;
-    padding:2vw;
-    text-decoration: none;
-    font-size: 17px;
-  }
-.Topbar nav a:hover {
-    background-color: #dee0e4;
-  }
-  
-.Topbar nav a.active {
-    background-color: #dee0e4;
-  }
-.Topbar img.profile_small{
-    width:50px;
-    margin:10px -20px;
-    z-index:2;
+.machine{
+    width:18%;
+    min-width:50px;
+    border-radius: 10px;
+    padding:3vw;
+    text-align: center;
+        
 }
+.machine:hover{
+    filter:drop-shadow(0 0 2em #40bfbe);
+ }        
+
+/* Bottom bar*/
+
 .bottom{
 background-color:#40bfbe;
 position:fixed;
 width:100%;
 height:15%;
 bottom:0;
-overflow: hidden;
-text-align:center;
 margin-top:7vw;
-font-family: 'Trebuchet MS', sans-serif;
-font-size:1,5vw;
+font-size:12px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 15px;
 }
-.bottom p{
-    padding:1vw;
+.bottom a{
+    font-size: 12px;
 }
-.machine{
-width:18%;
-min-width:50px;
-border-radius: 10px;
-padding:3vw;
-text-align: center;
-
+.bottom div{
+    padding:15px;
 }
-.machine:hover{
-    filter:drop-shadow(0 0 2em #40bfbe);
-}
-
 #Instagram{
 float:right;
-max-width:4%;
-height:auto;
+width: 15vw;
+max-width: 60px;
 margin-right:5vw;
 margin-top:2vw;
 }
+
+/* Login */
 
 .login, .register {
     width:400px;
