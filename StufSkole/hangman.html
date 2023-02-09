@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head >
+   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hangman</title>
+</head>
+<body>
+   <a class="exit" href="templates/index.html">&#x2715</a>
+
+   <h1 > Spill hangman!</h1>
+   <h4  id="score"> Hvis du tør... </h4>
+   <canvas id="canvas" height=200px >
+   </canvas>
+
+   <div class="buttons">
+   <button type="button" id= "a" onclick="clickButton('a')" > A </button>
+   <button type="button" id= "b"style= "left:10%" onclick="clickButton('b')"> B </button>
+   <button type="button" id= "c"style= "left:20%" onclick="clickButton('c')"> C </button>
+   <button type="button" id= "d"style= "left:30%" onclick="clickButton('d')"> D </button>
+   <button type="button" id= "e"style= "left:40%" onclick="clickButton('e')"> E </button>
+   <button type="button" id= "f"style= "left:50%" onclick="clickButton('f')"> F </button>
+   <button type="button" id= "g"style= "left:60%" onclick="clickButton('g')"> G </button>
+   <button type="button" id= "h"style= "left:70%" onclick="clickButton('h')"> H </button>
+   <button type="button" id= "i"style= "left:80%" onclick="clickButton('i')"> I </button>
+   <button type="button" id= "j"style=" left:90%" onclick="clickButton('j')"> J </button>
+   <button type="button" id= "k"style= "top:80%;" onclick="clickButton('k')"> K </button>
+   <button type="button" id= "l"style= "top:80%; left:10%" onclick="clickButton('l')"> L </button>
+   <button type="button" id= "m"style= "top:80%; left:20%" onclick="clickButton('m')"> M </button>
+   <button type="button" id= "n"style= "top:80%; left:30%" onclick="clickButton('n')"> N </button>
+   <button type="button" id= "o"style= "top:80%; left:40%" onclick="clickButton('o')"> O </button>
+   <button type="button" id= "p"style= "top:80%; left:50%" onclick="clickButton('p')"> P </button>
+   <button type="button" id= "q"style= "top:80%; left:60%" onclick="clickButton('q')"> Q </button>
+   <button type="button" id= "r"style= "top:80%; left:70%" onclick="clickButton('r')"> R </button>
+   <button type="button" id= "s"style= "top:80%; left:80%" onclick="clickButton('s')"> S </button>
+   <button type="button" id= "t"style= "top:80%; left:90%" onclick="clickButton('t')"> T </button>
+   <button type="button" id= "u"style= "top:90%; left:20%" onclick="clickButton('u')"> U </button>
+   <button type="button" id= "v"style= "top:90%; left:30%" onclick="clickButton('v')"> V </button>
+   <button type="button" id= "w"style= "top:90%; left:40%" onclick="clickButton('w')"> W </button>
+   <button type="button" id= "x"style= "top:90%; left:50%" onclick="clickButton('x')"> X </button>
+   <button type="button" id= "y"style= "top:90%; left:60%" onclick="clickButton('y')"> Y </button>
+   <button type="button" id= "z"style= "top:90%; left:70%" onclick="clickButton('z')"> Z </button>
+
+   <button type="button" style = "left:80%; top:90%; font-size:10px;" onclick="RefreshPage()"> Restart </button>
+   </div>
+
+   <h2 id="word"></h2>
+   <p id="display"></p>
+
+</body>
+
+<style>
+    body{
+      text-align: center;
+      font-family:copperplate;
+      background-color: rgba(182,255,142,0.5);
+      text-size-adjust:80%;
+    }
+   h1{
+      font-size:40px;
+      
+   }
+   button {
+      position:absolute; 
+      top:70%; 
+      left: 0%; 
+      background-color:rgb(182,255,142); 
+      height:10%; 
+      width:10%;
+      border: outset;
+      font-family: copperplate;
+      font-size: 4vw;
+   }
+   .exit{
+      position:fixed;
+      top:0;
+      right:0;
+      text-decoration: none;
+      color:black;
+      font-size: 4vw;
+      padding:10px;
+      font-family: copperplate;
+   }
+   canvas {
+      width: 300px;
+      margin:0;
+      top: 20%;
+      left: 10%;
+      border: 1px solid #105070;
+      background-color: rgb(182,255,142);
+   }
+   #display {
+      margin:0;
+      font-family:copperplate;
+      font-size: 150%
+   }
+</style>
+
+<script> //tegning
+
+const c = document.getElementById("canvas");
+const ctx = c.getContext("2d");
+
+
+class Circle {
+constructor(x,y,radius){
+this.x=x;
+this.y=y;
+this.radius=radius;
+}
+    Draw(ctx) {
+       ctx.beginPath();
+       ctx.arc(this.x,this.y,this.radius,0,2*Math.PI);
+       ctx.stroke();
+   }
+}
+class Line {
+constructor(x0,y0,x1,y1){
+this.x0=x0;
+this.x1=x1;
+this.y0=y0;
+this.y1=y1;
+}
+    Draw(ctx) {
+       ctx.moveTo(this.x0,this.y0);
+       ctx.lineTo(this.x1,this.y1);
+       ctx.stroke();
+   }
+}
+objects=[];
+
+objects.push(new Line(50,190,150,190));
+objects.push(new Line(100,190,100,60));
+objects.push(new Line(100,60,150,60));
+objects.push(new Line(150,60,150,90));
+objects.push(new Circle(150,100,10));
+objects.push(new Line(150,110,150,160));
+objects.push(new Line(150,160,140,180));
+objects.push(new Line(150,160,160,180));
+objects.push(new Line(150,110,140,140));
+objects.push(new Line(150,110,160,140));
+
+</script>
+
+<script> // gjetting 
+
+function Swap(Letter){
+   let c = -1
+   while (true){
+       c = wordToGuess.indexOf(Letter,c+1);    //returns index of letter or -1
+       if(c<0) break ;
+
+       wordGuessedCorrectly = wordGuessedCorrectly.substr(0,c) +Letter+
+       wordGuessedCorrectly.substr(c+1);
+       wordsLeft--;
+   } 
+   updateDisplays();
+}
+
+let wordbank =
+            ["stavanger","hjelp","teoretisk","informasjon",
+               "surdeig","redesign","husvegg","ripsbusk","xylon","peis",
+               "melkespann","instafjes","horeunge","indigo","vei","pisk",
+               "geit","matavfall","postkontor","tysker","fiskegrateng",
+               "vindu","risk","pels","takknemlighet","tyrani","skinkeost",
+               "underleppe", "boks","taper","griseunge","ytringsfrihet",
+               "pirat","rykte","tissefant","kaldblodig","suppeskje","nylon",
+               "lystgass","truseinnlegg","papir","hyperfleksibel","ytterjakke",
+               "fantorangen","shotglass","hemorider","islender","taustump",
+               "onsdag","klistremerke","hangperson","intetanende","ballongdyr",
+               "diskvalifisert","rake","tetris","bispedom","spedbarn","laktoseintoleranse",
+               "helsepersonell","riskake","meieriprodukter","yoghurt","lammestek",
+               "fritere","lemlestelse","juksemaker","innkvartere","innvalid"];
+
+function PickWord(wordbank) {       
+   let wordbank_index = Math.floor(Math.random() * wordbank.length);
+   let word = wordbank[wordbank_index];
+   return word;
+}
+
+let wordToGuess= PickWord(wordbank);
+let wordGuessedCorrectly="";
+document.getElementById("word").innerHTML="";
+
+for (let i =0; i<wordToGuess.length;i++) {
+   if(wordToGuess[i]==" ") wordGuessedCorrectly+=" ";
+   else wordGuessedCorrectly+="_";
+}
+
+let wordsLeft = wordToGuess.length;
+const wordElement=document.getElementById("word");
+let timesGuessedWrong=0;
+
+function updateDisplays(){
+document.getElementById("display").innerHTML = 
+"Du har "+wordsLeft+" bokstaver igjen!";
+document.getElementById("word").innerHTML = wordGuessedCorrectly.replaceAll("_","_ ");
+}
+updateDisplays();
+
+function clickButton(key){
+document.getElementById(key).onclick = "";
+document.getElementById(key).style = "visibility:hidden;" ;
+if(wordToGuess.indexOf(key)>=0){
+Swap(key);
+
+if (wordGuessedCorrectly == wordToGuess) {
+alert("Du har vunnet!      Ordet ditt var "+wordToGuess);
+score++;
+SaveInCookie();
+RefreshPage();
+}
+}
+else
+{
+objects[timesGuessedWrong].Draw(ctx);
+timesGuessedWrong++;
+   if (timesGuessedWrong>= objects.length) {
+   alert("Du har tapt :(   Ordet ditt var "+wordToGuess);
+   RefreshPage();
+   }
+}
+}
+
+function RefreshPage(){
+   window.location.reload();
+}
+
+let score = parseInt(document.cookie);
+if(isNaN(score))
+    score=0;
+else
+    document.getElementById("score").innerHTML="Din score: "+score;
+
+
+function SaveInCookie(){
+
+document.cookie=score;
+}
+</script>
+
+</html>

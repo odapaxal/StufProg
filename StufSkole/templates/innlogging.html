@@ -7,13 +7,27 @@
 </head>
 <body>
     <header class="Topbar">
-        <a href="index.html"> <img class="StufLogo" src="../images/stuflogo.jpg" alt="StufLogo"> </a>   
-        <nav>
-        <a href="overview.html">Vaskeliste</a>
-        <a href="innlogging.html">Innlogging</a>
-        <a href="">About</a>
-        </nav>
-    </header>
+		<a href="index.html"> 
+			<img class="StufLogo" src="../images/stuflogo.jpg" alt="StufLogo"> 
+		</a>   
+		<nav>
+			<a href="overview.html">Vaskeliste</a>
+			<a href="../hangman.html">Spill hangman</a>
+			<a href="">Om oss</a>
+			<a href="innlogging.html">Logg inn</a>
+		</nav>
+			<input type="checkbox" id="checkboxToggle">
+			<label for="checkboxToggle" class="menyIkon"><img src="../images/meny_ikon.png"></label>
+		<div class="sidebar">
+			<input type="checkbox" id="checkboxToggle">
+			<label for="checkboxToggle" class="exit">&#x2715</label>
+			<a href="overview.html">Vaskeliste</a>
+			<a href="../hangman.html">Spill hangman</a>
+			<a href="">Om oss</a>
+			<a href="innlogging.html">Logg inn</a>
+		</div>
+	</header>
+    <div class="pageContent">
 
     <div class="login">
         <div class="links">
@@ -29,12 +43,23 @@
     </div>
     <p>{{ msg }}</p>
 
-    <div class="bottom"> 
-        <a href="https://www.instagram.com/stufskole/" target="_blank">
-        <img id="Instagram" src="../images/Instagram.jpg" alt="Instagram">
-        </a>
-        <p >Copyright &copy by Stuf Programmering-Group</p>
-    </div>
+</div>
+
+    <div class="bottom index"> 
+		<div>
+		  <a href="">Dues vei 9 <br><br> 4006 Stavanger</a>
+		  <a href="">Nettsidens url</a>
+		  <a href="mailto:post@stufskole.no">post@stufskole.no</a>
+		  <a href="tel:+4793086277">930 86 277</a>
+		</div>
+		<div>
+		  <p>Copyright &copy by Stuf Programmering</p>
+		  <p>Følg oss på instagram:</p>
+		  <a href="https://www.instagram.com/stufskole/" target="_blank">
+		  <img id="Instagram" src="../images/Instagram.jpg" alt="Instagram">
+		  </a>
+		</div>
+	</div>
     
 </body>
 </html>

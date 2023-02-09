@@ -11,7 +11,7 @@
 		</a>   
 		<nav>
 			<a href="overview.html">Vaskeliste</a>
-			<a href="">Spill hangman</a>
+			<a href="../hangman.html">Spill hangman</a>
 			<a href="">Om oss</a>
 			<a href="innlogging.html">Logg inn</a>
 		</nav>
@@ -21,30 +21,69 @@
 			<input type="checkbox" id="checkboxToggle">
 			<label for="checkboxToggle" class="exit">&#x2715</label>
 			<a href="overview.html">Vaskeliste</a>
-			<a href="">Spill hangman</a>
+			<a href="../hangman.html">Spill hangman</a>
 			<a href="">Om oss</a>
 			<a href="innlogging.html">Logg inn</a>
 		</div>
 	</header>
 <body>
-	<h1>Vask klær? - Skriv her! &#x2715 </h1><br>
-	<img class="menyIkon" src="../images/meny_ikon.png">
-	<div>
-		
+<div class="pageContent">
+
+
+	<h1>Vaskeliste</h1>
+	<div class="vask">
+		<div class="tabell">
+			<div class="hvanårhvem">
+				<p>Hva</p>
+				<p>Når</p>
+				<p>Hvem</p>
+			</div>
+			<div class="vaskeInfo">
+				<p class="hva" id="hva">Hvitt 60&#8451</p>
+				<p class="når">Onsdag 1. februar 16.30</p>
+				<p class="hvem">Oda</p>
+			</div>
+		</div>
+		<button class="button" onclick="">Meld deg på</button>
+	</div>
+	<div class="vask">
+		<div class="tabell">
+			<div class="hvanårhvem">
+				<p>Hva</p>
+				<p>Når</p>
+				<p>Hvem</p>
+			</div>
+			<div class="vaskeInfo">
+				<p class="hva">Farget 40&#8451</p>
+				<p class="når">Fredag 2. februar 20.00</p>
+				<p class="hvem">Birk, Julia</p>
+			</div>
+		</div>
+		<button onclick="" class="button">Meld deg på</button>
 	</div>
 
+	<h1>Fant du ingen vask som passet?</h1>
+	<button onclick="" class="bigButton"><a href="vaskevalg.html">Opprett ny vask</a></button>
+
+
+</div>
+
+	
+</div>
 	<div class="bottom"> 
-		<a href="https://www.instagram.com/stufskole/" target="_blank">
-		<img id="Instagram" src="../images/Instagram.jpg" alt="Instagram">
-		</a>
-		<adress>
-			Copyright &copy by Stuf Programmering<br>
-			<a href="">Nettsidens url</a><br>
-			<a href="mailto:post@stufskole.no">post@stufskole.no</a><br>
-			<a href="tel:+4793086277">930 86 277</a>
-		</adress>
-		
+		<div>
+		  <a href="">Dues vei 9 <br><br> 4006 Stavanger</a>
+		  <a href="">Nettsidens url</a>
+		  <a href="mailto:post@stufskole.no">post@stufskole.no</a>
+		  <a href="tel:+4793086277">930 86 277</a>
+		</div>
+		<div>
+		  <p>Copyright &copy by Stuf Programmering</p>
+		  <p>Følg oss på instagram:</p>
+		  <a href="https://www.instagram.com/stufskole/" target="_blank">
+		  <img id="Instagram" src="../images/Instagram.jpg" alt="Instagram">
+		  </a>
+		</div>
 	</div>
-
 </body>
 </html>

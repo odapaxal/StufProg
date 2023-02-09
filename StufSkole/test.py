@@ -1,9 +1,4 @@
-from flask import Flask
+Hustall= [1,5,12,22,35,51,70]
 
-app=Flask(__name__)
-
-@app.route('/')
-def index():
-    return 'Hello World!'
-
-app.run(debug=True , port=5500)
+for i in range(len(Hustall)):
+    print(Hustall[i])

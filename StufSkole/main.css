@@ -1,10 +1,18 @@
 @import "bourbon";
-
 body{
-margin:0vw;
-text-align:center;
-font-family: 'Trebuchet MS', sans-serif;
-padding-top: 75px;
+    margin:0;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.pageContent{
+    margin:0 2vw 0 2vw;
+    text-align:center;
+    padding-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
 }
 a{
     text-decoration: none;
@@ -17,7 +25,23 @@ a:hover {
     color: #dee0e4;
     transition: 0.3s;
   }
-
+h1{
+    margin:20px 0 0 0;
+}
+button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 140px;
+    height: 80px;
+    background: #40BFBE;
+    border: 1px solid #40BFBE;
+    border-radius: 10px;
+    font-weight:500;
+    font-size: 20px;
+}
 /* Sidebar */
 
 .sidebar {
@@ -100,8 +124,9 @@ input[type=checkbox]{
     height:100%;
     width:auto;
 }
+/* Index page */
 .machine{
-    width:18%;
+    width:40%;
     min-width:50px;
     border-radius: 10px;
     padding:3vw;
@@ -112,34 +137,142 @@ input[type=checkbox]{
     filter:drop-shadow(0 0 2em #40bfbe);
  }        
 
+/* Overview */
+.vask{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    height:250px;
+    width:100%;
+    max-width:500px;
+}
+.tabell{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width:100%;
+}
+.hvanårhvem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 15px;
+    font-weight: bold;
+}
+.vaskeInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-right: 10px;
+}
+.bigButton{
+    font-size: 30px;
+    font-weight: 600;
+    width:auto;
+}
+
+/* Vaskevalg */
+.vaskevalg{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 15px; 
+}
+.vaskevalg button{
+    background-color: rgba(0, 0, 0, 0.1);
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width:100%;
+    height:50px;
+    font-weight: bold;
+    }
+    .vaskevalg button:hover{
+        background:rgba(112, 115, 120, 0.23);
+    }
+    .vaskevalg button:focus{
+        background: rgba(112, 115, 120, 0.72);
+    }
+.navigate{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0px;
+    gap: 10px;
+}
+.tilbake{
+    background: rgba(63, 191, 190, 0.44);
+    border:rgba(63, 191, 190, 0.44);
+    border-radius: 20px;
+    font-weight: bold;
+    width:100px;
+    height:50px;
+    padding: 10px;
+}
+.ferdig{
+    border-radius: 20px;
+    font-weight: bold;
+    width:100px;
+    height:50px;
+    padding: 10px;
+}
+    .ferdig:hover{
+        transition:0.5s;
+        border:rgba(63, 191, 190, 0.44);
+        box-shadow: 2px 2px 2px 2px rgba(63, 191, 190, 0.44);
+    }
+
+
 /* Bottom bar*/
 
 .bottom{
-background-color:#40bfbe;
-position:fixed;
-width:100%;
-height:15%;
-bottom:0;
-margin-top:7vw;
-font-size:12px;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: flex-start;
-padding: 15px;
+    background-color:#40bfbe;
+    position: relative;
+    width:100%;
+    height:auto; 
+    max-height: 200px;
+    bottom:0;
+    margin-top:7vw;
+    font-size:12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.index{
+    position:fixed;
 }
 .bottom a{
     font-size: 12px;
+    padding:10px;
+}
+.bottom p{
+    padding-left:20px;
 }
 .bottom div{
+    max-height: 150px;
     padding:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
 }
 #Instagram{
-float:right;
-width: 15vw;
-max-width: 60px;
-margin-right:5vw;
-margin-top:2vw;
+    float:right;
+    width: 15vw;
+    max-width: 60px;
+    margin-right:5vw;
+    margin-top:2vw;
 }
 
 /* Login */

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vaskeliste</title>
+	<link rel="stylesheet" href="../main.css">
+    <link href="../timepicker/css/mobiscroll.javascript.min.css" rel="stylesheet" />
+    <script src="../timepicker/js/mobiscroll.javascript.min.js"></script>
+    <script src="../vaskeliste.js"></script>
+</head>
+	<header class="Topbar">
+		<a href="index.html"> 
+			<img class="StufLogo" src="../images/stuflogo.jpg" alt="StufLogo"> 
+		</a>   
+		<nav>
+			<a href="overview.html">Vaskeliste</a>
+			<a href="../hangman.html">Spill hangman</a>
+			<a href="">Om oss</a>
+			<a href="innlogging.html">Logg inn</a>
+		</nav>
+			<input type="checkbox" id="checkboxToggle">
+			<label for="checkboxToggle" class="menyIkon"><img src="../images/meny_ikon.png"></label>
+		<div class="sidebar">
+			<input type="checkbox" id="checkboxToggle">
+			<label for="checkboxToggle" class="exit">&#x2715</label>
+			<a href="overview.html">Vaskeliste</a>
+			<a href="../hangman.html">Spill hangman</a>
+			<a href="">Om oss</a>
+			<a href="innlogging.html">Logg inn</a>
+		</div>
+	</header>
+<body>
+    
+<div class="pageContent">
+    <h1>Når vil du vaske?</h1>
+
+    <a href="../timepicker/datetime_time-picker.html">Velg dato</a>
+    <div class="tidvalg">
+        <input type="datetime-local" name="dato">
+    </div>
+    
+
+    <div class="navigate">
+        <button onclick="" class="tilbake"><a href="vaskevalg.html">Tilbake</a></button>
+        <button onclick="" class="ferdig"><a href="overview.html">Ferdig</a></button>
+    </div>
+
+
+</div>
+
+	
+
+<div class="bottom index"> 
+		<div>
+        <a href="">Dues vei 9 <br><br> 4006 Stavanger</a>
+		  <a href="">Nettsidens url</a>
+		  <a href="mailto:post@stufskole.no">post@stufskole.no</a>
+		  <a href="tel:+4793086277">930 86 277</a>
+		</div>
+		<div>
+		  <p>Copyright &copy by Stuf Programmering</p>
+		  <p>Følg oss på instagram:</p>
+		  <a href="https://www.instagram.com/stufskole/" target="_blank">
+		  <img id="Instagram" src="../images/Instagram.jpg" alt="Instagram">
+		  </a>
+		</div>
+	</div>
+
+</body>
+</html>
